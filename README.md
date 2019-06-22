@@ -1,5 +1,5 @@
-Split large files into smaller ones using the same Content Defined Chunking[1]
-algorithm the restic[2] backup program uses.
+Split large files into smaller ones using the same [Content Defined Chunking][1]
+algorithm the [restic][2] backup program uses.
 
 Build (using Go >= 1.11):
 
@@ -11,5 +11,5 @@ Sample usage:
 
 The library used for this program is https://github.com/restic/chunker
 
-[1] https://restic.net
-[2] https://restic.net
+[1]: https://restic.net
+[2]: https://restic.net
