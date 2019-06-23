@@ -7,7 +7,7 @@ Build (using Go >= 1.11):
 
 Sample usage:
 
-    $ ./split -v -o /tmp -i /tmp/data
+    $ ./split --verbose --output /tmp --input /tmp/data
     next chunk offset 0, 814244 bytes written to /tmp/split-000
     next chunk offset 814244, 1649886 bytes written to /tmp/split-001
     next chunk offset 2464130, 3332485 bytes written to /tmp/split-002
