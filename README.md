@@ -7,7 +7,25 @@ Build (using Go >= 1.11):
 
 Sample usage:
 
-    $ ./split -v -o /tmp < /tmp/data
+    $ ./split -v -o /tmp -i /tmp/data
+    next chunk offset 0, 814244 bytes written to /tmp/split-000
+    next chunk offset 814244, 1649886 bytes written to /tmp/split-001
+    next chunk offset 2464130, 3332485 bytes written to /tmp/split-002
+    next chunk offset 5796615, 1996103 bytes written to /tmp/split-003
+    [...]
+    next chunk offset 101940538, 700441 bytes written to /tmp/split-069
+    next chunk offset 102640979, 533829 bytes written to /tmp/split-070
+    next chunk offset 103174808, 537761 bytes written to /tmp/split-071
+    next chunk offset 103712569, 1145031 bytes written to /tmp/split-072
+    wrote 104857600 bytes to 73 files
+
+Using `cat`, we can put the file back together (and use `sh256sum` to verify it's the same data):
+
+    $ cat /tmp/split-* | sha256sum
+    66b9d2c5de34170b93f387988a80fb600717da5e437dcc4da1025343fb9019a1  -
+
+    $ sha256sum /tmp/data
+    66b9d2c5de34170b93f387988a80fb600717da5e437dcc4da1025343fb9019a1  /tmp/data
 
 Check out the help for other options:
 
