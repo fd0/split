@@ -64,6 +64,10 @@ func main() {
 		os.Exit(0)
 	}
 
+	if err != nil {
+		die("error: %v", err)
+	}
+
 	var input = os.Stdin
 	if opts.InputFile != "" {
 		f, err := os.Open(opts.InputFile)
